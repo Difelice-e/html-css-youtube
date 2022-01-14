@@ -1,3 +1,4 @@
+/* COMMON  */
 *{
     margin: 0;
     padding: 0;
@@ -11,7 +12,13 @@
   img{
     max-width: 100%;
   }
-  
+
+  a {
+      text-decoration: none;
+      color: currentColor;
+  }
+
+/* LAYOUT  */
   body{
     display: flex;
     flex-direction: column;
@@ -30,6 +37,13 @@
     flex-grow: 1;
   }
   
+  .main-container{
+    background-color: #f8f8f8;
+    flex-grow: 1;
+    width: 100%;
+  }
+
+  /* SIDEBAR SECTION  */
   .side-bar{
     width: 240px;
     flex-shrink: 0;
@@ -46,7 +60,7 @@
     padding: 10px 10px;
     display: flex;
     align-items: center;
-  
+    transition: 500ms;
   }
   
   .menu-item:hover, .menu-item.active{
@@ -59,6 +73,10 @@
     margin-right: 10px;
     font-size: 20px;
     vertical-align: middle;
+  }
+
+  .chevron {
+      margin-left: -5px;
   }
   
   .icon i{
@@ -77,18 +95,27 @@
     width: 24px;
   }
   
-  .main-container{
-    background-color: #f8f8f8;
-    flex-grow: 1;
-    width: 100%;
-  }
-  
+  /* CATEGORIES SECTION  */
   .categories{
     display: flex;
     background-color: white;
     gap: 15px;
     padding: 15px 30px;
     overflow: hidden;
+    position: relative;
+  }
+  
+  .categories::after {
+      content: '';
+      display: block;
+      background-color: white;
+      box-shadow: 0 0 35px 10px white;
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 30px;
+      z-index: 999;
   }
   
   .categories li{
@@ -97,8 +124,19 @@
     border:1px solid #e5e5e5;
     padding: 0 15px;
     line-height: 30px;
+    transition: 500ms;
   }
+
+  .categories li:hover {
+    background-color: #e5e5e5;
+}
   
+  .categories li.active, .categories li:active {
+      background-color: black;
+      color: white;
+  }
+
+  /* PLAYLIST SECTION  */
   .play-list-wrapper{
     padding: 20px 30px;
     width: 100%;
@@ -136,8 +174,7 @@
     border-radius: 50%;
   }
 
-  /* ------- OLD CSS -------- */
-
+  /* MEDIA QUERY RESPONSIVE  */
 @media screen and (max-width:1330px) {
     .side-bar{
         width: 72px;
