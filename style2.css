@@ -1,4 +1,48 @@
-.menu-item{
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  ul{
+    list-style-type: none;
+  }
+  
+  img{
+    max-width: 100%;
+  }
+  
+  body{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+  
+  header{
+    padding: 30px;
+    border: 2px solid red;
+    height: 20px;
+  }
+  
+  main{
+    display: flex;
+    border: 2px solid black;
+    flex-grow: 1;
+  }
+  
+  .side-bar{
+    width: 240px;
+    flex-shrink: 0;
+  }
+  
+  .widget{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e5e5e5;
+  }
+  
+  
+  .menu-item{
     padding: 10px 10px;
     display: flex;
     align-items: center;
@@ -91,5 +135,48 @@
 
   /* ------- OLD CSS -------- */
 
+@media screen and (max-width:1330px) {
+    .side-bar{
+        width: 72px;
+        flex-shrink: 0;
+    }
+
+    .widget{
+        padding-top: 0px;
+        padding-bottom: 0px;
+        border-bottom: none;
+    }
+    
+    .widget:not(.side-bar .widget:first-child) .menu-item:not(.widget__menu .menu-item:first-child) {
+        display:none;
+    }
+    
+    .widget .widget__title {
+        display:none;
+    }
+
+    .menu-item{
+        padding: 14px 0px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: flex-start;
+        font-size: 13px;
+    }
+
+    .menu-item .icon{
+        width: 30px;
+        text-align: center;
+        margin-right: 0px;
+        font-size: 20px;
+        margin-bottom: 10px;   
+    }
   
+}
+
+@media screen and (max-width:800px) {
+    .side-bar{
+        display: none;
+    }
+}
 
