@@ -80,6 +80,7 @@
   .main-container{
     background-color: #f8f8f8;
     flex-grow: 1;
+    width: 100%;
   }
   
   .categories{
@@ -87,6 +88,7 @@
     background-color: white;
     gap: 15px;
     padding: 15px 30px;
+    overflow: hidden;
   }
   
   .categories li{
@@ -95,17 +97,18 @@
     border:1px solid #e5e5e5;
     padding: 0 15px;
     line-height: 30px;
-    white-space: nowrap;
-    flex-shrink: 0;
   }
   
   .play-list-wrapper{
     padding: 20px 30px;
+    width: 100%;
   }
   
   .play-list{
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 50px 0px;
   }
   
   .play-list-item{
@@ -174,9 +177,36 @@
   
 }
 
+@media screen and (max-width:1140px) {
+    .play-list-item{
+        width: 32%;
+    }
+}
+
+@media screen and (max-width:890px) {
+    .play-list-item {
+        width: 48%;
+    }
+}
+
 @media screen and (max-width:800px) {
     .side-bar{
         display: none;
     }
 }
+
+@media screen and (max-width:510px) {
+    .play-list{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 50px 0px;
+    }
+    
+    .play-list-item {
+        width: 90%;
+    }
+}
+
+
 
