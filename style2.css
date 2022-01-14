@@ -29,6 +29,9 @@
     padding: 30px;
     border: 2px solid red;
     height: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
   
   main{
@@ -43,6 +46,12 @@
     width: 100%;
   }
 
+  /* HEADER SECTION  */
+  header .searchbar div {
+      display: inline-block;
+      padding: 0 10px;
+  }
+  
   /* SIDEBAR SECTION  */
   .side-bar{
     width: 240px;
