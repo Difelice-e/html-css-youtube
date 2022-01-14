@@ -26,17 +26,16 @@
   }
   
   header{
-    padding: 30px;
-    border: 2px solid red;
+    padding: 30px 20px;
     height: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 50px;
   }
   
   main{
     display: flex;
-    border: 2px solid black;
     flex-grow: 1;
   }
   
@@ -47,9 +46,39 @@
   }
 
   /* HEADER SECTION  */
-  header .searchbar div {
-      display: inline-block;
-      padding: 0 10px;
+  .home, .searchbar, nav ul {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+  }
+
+  .searchbar {
+    flex-shrink: 1;
+    flex-grow: 1;
+  }
+
+  header .icon{
+    width: 30px;
+    text-align: center;
+    margin-right: 10px;
+    font-size: 25px;
+    vertical-align: middle;
+  }
+
+  .logo {
+      width: 100px;
+      height: 56px;
+  }
+
+  .logo img {
+      object-position: center;
+      object-fit: cover;
+  }
+  
+  header .searchbar input { 
+    flex-grow: 1;
+    height: 40px;
+    padding: 0 50px 0 10px;
   }
   
   /* SIDEBAR SECTION  */
@@ -98,7 +127,7 @@
     font-size: 14px;
   }
   
-  .menu-item .profile-image{
+  .profile-image{
     display: block;
     border-radius: 50%;
     width: 24px;
