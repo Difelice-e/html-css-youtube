@@ -46,41 +46,72 @@
   }
 
   /* HEADER SECTION  */
-  .home, .searchbar, nav ul {
+  header .icon{
+    width: 30px;
+    text-align: center;
+    margin-right: 10px;
+    font-size: 22px;
+    vertical-align: middle;
+  }
+
+  .logo {
+    width: 100px;
+    height: 56px;
+  }
+
+  .logo img {
+    object-position: center;
+    object-fit: cover;
+}
+
+.logo .logo-mobile {
+  display: none;
+}
+
+/* SEARCH BAR   */
+  .home, .searchbar-wrapper, nav ul {
       display: flex;
       gap: 15px;
       align-items: center;
   }
 
-  .searchbar {
+  .searchbar-wrapper {
     flex-shrink: 1;
     flex-grow: 1;
+    display: flex;
+    align-items: center;
+    position: relative;
   }
 
-  header .icon{
-    width: 30px;
-    text-align: center;
-    margin-right: 10px;
-    font-size: 25px;
-    vertical-align: middle;
+  .searchbar {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    flex-grow: 1;
   }
 
-  .logo {
-      width: 100px;
-      height: 56px;
-  }
-
-  .logo img {
-      object-position: center;
-      object-fit: cover;
-  }
-  
-  header .searchbar input { 
+  .searchbar-wrapper .searchbar input { 
     flex-grow: 1;
     height: 40px;
-    padding: 0 50px 0 10px;
+    padding: 0 60px 0 10px;
   }
-  
+
+  .searchbar .search-icon  {
+    padding: 0px 0px;
+    margin-right: 0;
+    border: 1px solid grey;
+    width: 60px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 55px;
+  }
+
+  .searchbar .search-icon i {
+    padding: 8px 0;
+    color: grey;
+  }
+
   /* SIDEBAR SECTION  */
   .side-bar{
     width: 240px;
@@ -163,6 +194,7 @@
     padding: 0 15px;
     line-height: 30px;
     transition: 500ms;
+    white-space: nowrap;
   }
 
   .categories li:hover {
@@ -213,7 +245,8 @@
   }
 
   /* MEDIA QUERY RESPONSIVE  */
-@media screen and (max-width:1330px) {
+
+  @media screen and (max-width:1330px) {
     .side-bar{
         width: 72px;
         flex-shrink: 0;
@@ -268,7 +301,20 @@
     .side-bar{
         display: none;
     }
-}
+
+    .searchbar input {
+      display: none;
+    }
+
+    .searchbar .search-icon {
+      border: none;
+      right: 28px;
+    }
+
+    .home, .searchbar-wrapper, nav ul {
+      gap: 0px;
+    }
+  }
 
 @media screen and (max-width:510px) {
     .play-list{
@@ -281,6 +327,43 @@
     .play-list-item {
         width: 90%;
     }
+
+    header {
+      gap: 0px;
+    }
+    
+    .searchbar {
+      justify-content: space-around;
+    }
+
+    .searchbar .search-icon {
+      position: relative;
+      display: contents;
+    }
+
+    .searchbar-wrapper > .icon {
+      display: none;
+    }
+
+    nav ul li:nth-child(3) {
+      display: none;
+    }
+}
+
+@media screen and (max-width:420px) {
+  .logo .logo-xl {
+    display: none;
+  }
+
+  .logo .logo-mobile {
+    display: block;
+    height: 100%;
+  }
+
+  .logo {
+    height: 40px;
+    width: max-content;
+  }
 }
 
 
