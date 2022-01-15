@@ -210,6 +210,7 @@
   .play-list-wrapper{
     padding: 20px 30px;
     width: 100%;
+    overflow: scroll;
   }
   
   .play-list{
@@ -217,6 +218,14 @@
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 50px 0px;
+    border-bottom: 3px solid rgb(173, 173, 173);
+    padding: 35px 0;
+  }
+  
+  .play-list-title {
+    width: 100%;
+    color: black;
+    font-size: 26px;
   }
   
   .play-list-item{
@@ -289,11 +298,19 @@
     .play-list-item{
         width: 32%;
     }
+
+    .play-list:nth-child(2) .play-list-item:nth-child(4n) {
+      display: none;
+    }
 }
 
 @media screen and (max-width:890px) {
     .play-list-item {
         width: 48%;
+    }
+
+    .play-list:nth-child(2) .play-list-item:nth-child(4n) {
+      display: block;
     }
 }
 
