@@ -26,7 +26,7 @@
   }
   
   header{
-    padding: 30px 20px;
+    padding: 40px 20px;
     height: 20px;
     display: flex;
     justify-content: space-between;
@@ -50,8 +50,9 @@
     width: 30px;
     text-align: center;
     margin-right: 10px;
-    font-size: 22px;
+    font-size: 26px;
     vertical-align: middle;
+    position: relative;
   }
 
   .logo {
@@ -64,9 +65,25 @@
     object-fit: cover;
 }
 
-.logo .logo-mobile {
+  .logo .logo-mobile {
   display: none;
-}
+  }
+
+  nav ul li:nth-child(3)::after {
+    content: "9+";
+    display: block;
+    width: 26px;
+    height: 20px;
+    line-height: 20px;
+    font-size: 15px;
+    color: white;
+    background-color: red;
+    border-radius: 999px;
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    z-index: 999;
+  }
 
 /* SEARCH BAR   */
   .home, .searchbar-wrapper, nav ul {
@@ -108,7 +125,7 @@
   }
 
   .searchbar .search-icon i {
-    padding: 8px 0;
+    padding: 5px 0;
     color: grey;
   }
 
@@ -116,6 +133,7 @@
   .side-bar{
     width: 240px;
     flex-shrink: 0;
+    overflow: auto;
   }
   
   .widget{
@@ -130,6 +148,18 @@
     display: flex;
     align-items: center;
     transition: 500ms;
+    position: relative;
+  }
+
+  .widget.iscrizioni .menu-item:not(.menu-item:last-child)::after {
+    content: '';
+    height: 5px;
+    width: 5px;
+    display: block;
+    background-color: blue;
+    border-radius: 50%;
+    position: absolute;
+    right: 10px;
   }
   
   .menu-item:hover, .menu-item.active{
@@ -210,7 +240,7 @@
   .play-list-wrapper{
     padding: 20px 30px;
     width: 100%;
-    overflow: scroll;
+    overflow: auto;
   }
   
   .play-list{
